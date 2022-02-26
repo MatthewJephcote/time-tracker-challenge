@@ -1,0 +1,7 @@
+@media (max-width: 1024px) {
+  li {
+  display: inline;
+  padding-left: 48px;
+  padding-right: 48px;
+  }
+}
