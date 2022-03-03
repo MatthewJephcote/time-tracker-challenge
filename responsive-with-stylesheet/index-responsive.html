@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/global.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <!--<style>
+  @font-face {
+  font-family: Rubik;
+  src: url('fonts\static\Rubik-Regular.ttf');
+  }
+  body {
+  font-family: Rubik;
+  }
+  </style>-->
+</head>
+<!--setting screen background colour:-->
+<body>
+<!--horizontally & vertically centering dashboard on viewport:-->
+<div class="flex min-h-screen">
+<!--creating main flex container for dashboard:-->
+  <div class="main-container flex sm:flex-col lg:flex-row text-white sm:gap-2 lg:gap-7 m-auto">
+<!--creating dashboard name-panel & frequency-menu, using nesting flexboxes:-->
+    <div class="name-frequency flex flex-col lg:w-60">
+      <div class="name-panel flex sm:flex-row lg:flex-col p-7 rounded-xl z-10 sm:gap-4 lg:w-60">
+        <div class="jeremy-photo">
+          <img class="rounded-full border-4 border-white" src="images\image-jeremy.png" alt="selfie of Jeremy Robson" width=100%>
+        </div>
+        <div class="sm:flex sm:flex-col">
+        <p class="text-sm lg:pt-4">Report for</p>
+        <h1 class="text-5xl font-light lg:w-1/2">Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="frequency-menu flex sm:py-8 lg:p-7 rounded-xl text-base z-0">
+        <nav class="font-semibold pt-3">
+          <ul>
+            <li class="visited:text-white hover:text-violet-600 active:text-violet-700 py-1"><a href="#">Daily</a></li>
+            <li class="visited:text-white hover:text-violet-600 active:text-violet-700 py-1"><a href="#">Weekly</a></li>
+            <li class="visited:text-white hover:txt-violet-600 active:text-violet-700 py-1"><a href="#">Monthly</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+<!--creating activities boxes, using nesting flexboxes:-->
+    <div class="flex sm:flex-col lg:flex-row lg:flex-wrap sm:gap-2 lg:gap-7">
+      <div class="flex flex-col lg:w-60 lg:h-56 overflow-hidden">
+        <div class="activity-tab work-tab flex sm:items-center justify-end h-14 pr-4 sm:pb-1 rounded-xl">
+          <img class="md:w-1/6" src="images\icon-work.svg" alt="briefcase icon">
+        </div>
+        <div class="activity-tile flex flex-col p-7 rounded-xl">
+          <div class="flex justify-between">
+            <h2 class="font-bold">Work</h2>
+            <img class="py-3" src="images\icon-ellipsis.svg" alt="three-dots for dropdown-menu" width="7.5%">
+          </div>
+          <div class="flex sm:items-center sm:justify-between lg:flex-col">
+            <strong class="text-6xl sm:font-light font-normal py-3">32hrs</strong>
+            <p class="text-sm">Last Week - 36hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:w-60 lg:h-56 overflow-hidden">
+        <div class="activity-tab play-tab flex sm:items-center justify-end h-14 pr-4 sm:pt-2 rounded-xl">
+          <img class="md:w-1/6" src="images\icon-play.svg" alt="gaming-controller icon">
+        </div>
+        <div class="activity-tile flex flex-col p-7 rounded-xl">
+          <div class="flex justify-between">
+            <h2 class= "font-bold">Play</h2>
+            <img class="py-3" src="images\icon-ellipsis.svg" alt="three-dots for dropdown-menu" width="7.5%">
+          </div>
+          <div class="flex sm:items-center sm:justify-between lg:flex-col">
+            <strong class="text-6xl sm:font-light font-normal py-3">10hrs</strong>
+            <p class="text-sm">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:w-60 lg:h-56 overflow-hidden">
+        <div class="activity-tab study-tab flex md:items-center lg:items-end justify-end h-14 pr-4 rounded-xl">
+          <img class="sm:w-1/6 lg:pb-0.5" src="images\icon-study.svg" alt="book icon">
+        </div>
+        <div class="activity-tile flex flex-col p-7 rounded-xl">
+          <div class="flex justify-between">
+            <h2 class= "font-bold">Study</h2>
+            <img class="py-3" src="images\icon-ellipsis.svg" alt="three-dots for dropdown-menu" width="7.5%">
+          </div>
+          <div class="flex sm:items-center md:justify-between lg:flex-col">
+            <strong class="text-6xl sm:font-light font-normal py-3">4hrs</strong>
+            <p class="text-sm">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:w-60 lg:h-56 overflow-hidden">
+        <div class="activity-tab exercise-tab flex justify-end items-end h-14 pr-4 rounded-xl">
+          <img class="sm:w-1/6 sm:pb-1.5 lg:pb-3.5" src="images\icon-exercise.svg" alt="running-person icon">
+        </div>
+        <div class="activity-tile flex flex-col p-7 rounded-xl">
+          <div class="flex justify-between">
+            <h2 class= "font-bold">Exercise</h2>
+            <img class="py-3" src="images\icon-ellipsis.svg" alt="three-dots for dropdown-menu" width="7.5%">
+          </div>
+          <div class="flex sm:items-center sm:justify-between lg:flex-col">
+            <strong class="text-6xl sm:font-light font-normal py-3">4hrs</strong>
+            <p class="text-sm">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:w-60 lg:h-56 overflow-hidden">
+        <div class="activity-tab social-tab flex justify-end md:items-center h-14 pr-3 sm:pt-2.5 rounded-xl">
+          <img class="sm:w-1/6 lg:pt-3" src="images\icon-social.svg" alt="speech-bubble icon">
+        </div>
+        <div class="activity-tile flex flex-col p-7 rounded-xl">
+          <div class="flex justify-between">
+            <h2 class= "font-bold">Social</h2>
+            <img class="py-3" src="images\icon-ellipsis.svg" alt="three-dots for dropdown-menu" width="7.5%">
+          </div>
+          <div class="flex sm:items-center sm:justify-between lg:flex-col">
+            <strong class="text-6xl sm:font-light font-normal py-3">5hrs</strong>
+            <p class="text-sm">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col lg:w-60 lg:h-56 overflow-hidden">
+        <div class="activity-tab self-care-tab flex justify-end md:items-center lg:justify-end h-14 pr-3 rounded-xl">
+          <img class="sm:w-1/6 sm:pb-3.5 lg:pb-2" src="images\icon-self-care.svg" alt="heart-with-cross icon">
+        </div>
+        <div class="activity-tile flex flex-col p-7 rounded-xl">
+          <div class="flex justify-between">
+            <h2 class= "font-bold">Self Care</h2>
+            <img class="py-3" src="images\icon-ellipsis.svg" alt="three-dots for dropdown-menu" width="7.5%">
+          </div>
+          <div class="flex sm:items-center sm:justify-between lg:flex-col">
+            <strong class="text-6xl sm:font-light font-normal py-3">2hrs</strong>
+            <p class="text-sm">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
